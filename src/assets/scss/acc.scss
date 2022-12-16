@@ -1,0 +1,168 @@
+.acc {
+  border-bottom: 1px solid #d9d9d9;
+  //border-top: 1px solid #d9d9d9;
+
+  // .acc__header
+  &__header {
+    display: flex;
+    padding: 40px 0 40px;
+
+    @media (max-width: 768px) {
+      padding: 30px 0 30px;
+    }
+  }
+
+  // .acc__title
+  &__title {
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  // .acc__btn
+  &__btn {
+    align-items: center;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 1px solid #7e7e7e;
+    color: #7e7e7e;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 36px;
+    font-weight: 300;
+    height: 50px;
+    justify-content: center;
+    line-height: 44px;
+    margin-left: auto;
+    padding: 0;
+    position: relative;
+    transition: all 0.3s ease;
+    width: 50px;
+
+    @media (max-width: 768px) {
+      font-size: 21.6px;
+      height: 30px;
+      line-height: 26px;
+      width: 30px;
+    }
+
+    &::before {
+      content: "+";
+      position: absolute;
+      transition: opacity 0.3s ease;
+    }
+
+    &::after {
+      content: "-";
+      opacity: 0;
+      position: absolute;
+      transform: translate(0, -3px);
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  // .acc__arr
+  &__arr {
+    fill: #585858;
+    margin: auto 8px auto auto;
+    transition: all 0.3s ease;
+  }
+
+  // .acc__body
+  &__body {
+    //height: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  // .acc__content
+  &__content {
+    opacity: 0;
+    padding: 0px 0 40px;
+    transition: opacity 0s ease;
+
+    @media (max-width: 768px) {
+      padding: 0 0 30px;
+    }
+  }
+}
+
+.acc.active {
+  .acc__title {
+    color: #cfafa3;
+  }
+
+  .acc__btn {
+    background-color: #cfafa3;
+    border-color: #cfafa3;
+    color: #000000;
+
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .acc__arr {
+    transform: rotate(-180deg);
+  }
+
+  .acc__body {
+    max-height: 300px;
+    //overflow: auto;
+    animation: delay-overflow 0.3s linear 0.3s 1 forwards;
+  }
+
+  .acc__content {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.acc:first-of-type {
+  border-top: 1px solid #d9d9d9;
+}
+
+[data-acc] {
+  cursor: pointer;
+}
+
+.acc.in-filtr {
+  .acc__header {
+    padding: 20px 0 20px;
+  }
+
+  .acc__title {
+    font-weight: 900;
+  }
+
+  .acc__content {
+    padding: 10px 0 20px;
+  }
+}
+
+/* <div class="acc" data-acc>
+  <div class="acc__header" data-acctrigger>
+    <div class="h2 acc__title">Рекоммендуемые материалы</div>
+    <button class="acc__btn"></button>
+  </div>
+  <div class="acc__body">
+    <div class="acc__content color-gray">
+      Проверьте настройки печати. С верным настройками рамки должны
+      быть по всем 4 сторонам листа А4. Не печатайте выкройку из
+      браузера. Сначала скачайте файл на устройство, откройте его
+      через программу для чтения Pdf файлов, затем отправляйте на
+      печать. Обязательно проверьте настройку "ориентация листа", в
+      ней должно стоять "автопортрет/альбом". Уберите галочку в
+      строчке "выбрать источник бумаги по размеру страницы pdf", если
+      она там стоит.
+    </div>
+  </div>
+</div> */

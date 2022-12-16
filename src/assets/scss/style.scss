@@ -1,0 +1,135 @@
+$font-family-base: sans-serif;
+//$primary: orange;
+
+@import "bootstrap/scss/bootstrap-reboot.scss";
+@import "bootstrap/scss/bootstrap-grid.scss";
+@import "bootstrap/scss/bootstrap-utilities.scss";
+// @import 'bootstrap/scss/bootstrap.scss';
+
+:root {
+  --main-fz: 16px;
+  --main-lh: 1.5;
+  --main-ff: sans-serif;
+  --main-fc: #000000;
+  --swiper-theme-color: #12a6df;
+  --swiper-pagination-bullet-horizontal-gap: 10px;
+  --main-color: "inherit";
+  --second-color: "inherit";
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+  scrollbar-color: #12a6df #bdbdbd;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #bdbdbd;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #12a6df;
+  border-radius: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--main-fc);
+  font-family: var(--main-ff);
+  font-size: var(--main-fz);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--main-lh);
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.container {
+  @media (min-width: 1280px) {
+    max-width: 1224px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* .row {
+  --bs-gutter-x: 20px;
+} */
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  min-height: 100vh;
+  // overflow: hidden;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+.block-img-cover {
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+}
+
+.sec-title {
+  @media screen and (max-width: 640px) {
+  }
+}
+
+svg {
+  transition: fill 0.3s, stroke 0.3s;
+}
+
+a {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+// animation: delay-overflow 0.3s linear 0.3s 1 forwards;
+@keyframes delay-overflow {
+  from {
+    overflow: auto;
+  }
+  to {
+    overflow: auto;
+  }
+}
+
+@keyframes first-load {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

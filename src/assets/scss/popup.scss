@@ -1,0 +1,128 @@
+.overlay {
+  backdrop-filter: blur(5px);
+  background-color: rgba(53, 53, 53, 0.8);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  z-index: 20;
+
+  &.active {
+    opacity: 1;
+    pointer-events: initial;
+    transition: opacity 0.3s;
+  }
+}
+
+.popup {
+  background-color: #ffffff;
+  border-radius: 0px;
+  left: 50%;
+  max-height: 98vh;
+  max-width: 100%;
+  opacity: 0;
+  overflow: auto;
+  padding: 60px 60px 80px;
+  pointer-events: none;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0s ease;
+  width: 800px;
+  z-index: 21;
+
+  @media (max-width: 992px) {
+    padding: 40px 40px 50px;
+    width: calc(100% - 40px);
+  }
+
+  @media (max-width: 500px) {
+    padding: 30px 30px 40px;
+  }
+
+  // .popup__close
+  &__close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 46px;
+    padding: 0px;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 46px;
+    z-index: 2;
+
+    &:hover {
+      .popup__close-icon {
+        fill: #cfafa3;
+      }
+    }
+  }
+
+  // .popup__close-icon
+  &__close-icon {
+    fill: #353535;
+  }
+
+  // .popup__header
+  &__header {
+    margin-bottom: 60px;
+
+    @media (max-width: 500px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  // .popup__title
+  &__title {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 44px;
+  }
+
+  // .popup__row
+  &__row {
+    margin-bottom: 60px;
+
+    @media (max-width: 500px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  // .popup.active
+  &.active {
+    opacity: 1;
+    pointer-events: initial;
+    transition: opacity 0.3s;
+  }
+}
+
+button.popup__title {
+  background-color: transparent;
+  border: none;
+  color: #757575;
+  cursor: pointer;
+  margin-right: 60px;
+  padding: 0;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+
+  @media (max-width: 500px) {
+    font-size: 32px;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: #cfafa3;
+  }
+
+  &.active {
+    color: #353535;
+  }
+}

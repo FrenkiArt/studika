@@ -1,0 +1,130 @@
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+
+  // .pagination__item
+  &__item {
+    margin: 0 5px;
+
+    @media (max-width: 600px) {
+      order: 3;
+    }
+
+    &.pagination__to-start,
+    &.pagination__to-end {
+      .pagination__link {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 17px;
+        padding: 5px 30px;
+        width: initial;
+      }
+    }
+
+    &.pagination__to-start {
+      @media (max-width: 600px) {
+        order: 1;
+        width: calc(50% - 10px);
+        margin-bottom: 30px;
+      }
+    }
+
+    &.pagination__to-end {
+      @media (max-width: 600px) {
+        order: 2;
+        width: calc(50% - 10px);
+        margin-bottom: 30px;
+        text-align: right;
+      }
+    }
+  }
+
+  // .pagination__link
+  &__link {
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 22.5px;
+    border: 2px solid #f1f1f1;
+    color: #000000;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: 600;
+    height: 45px;
+    justify-content: center;
+    line-height: 22px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    width: 45px;
+
+    &:hover {
+      border: 2px solid #353535;
+    }
+
+    &.disabled {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    &.active {
+      background-color: #353535;
+      border: 2px solid #353535;
+      color: #ffffff;
+    }
+
+    &.dots {
+      pointer-events: none;
+    }
+
+    svg {
+      fill: transparent;
+      stroke: #000000;
+    }
+  }
+}
+
+/* <ul class="pagination">
+  <li class="pagination__item pagination__to-start">
+    <a class="pagination__link disabled"> В начало </a>
+  </li>
+  <li class="pagination__item">
+    <a class="pagination__link disabled">
+      <svg width="8" height="14" class="">
+        <use
+          xlink:href="assets/svg/svg_sprite.svg#pag-arr-left"
+        ></use>
+      </svg>
+    </a>
+  </li>
+  <li class="pagination__item">
+    <a class="pagination__link active" href="#">1</a>
+  </li>
+  <li class="pagination__item">
+    <a class="pagination__link" href="#">2</a>
+  </li>
+  <li class="pagination__item">
+    <a class="pagination__link dots" href="#">...</a>
+  </li>
+  <li class="pagination__item">
+    <a class="pagination__link" href="#">
+      <svg width="8" height="14" class="">
+        <use
+          xlink:href="assets/svg/svg_sprite.svg#pag-arr-next"
+        ></use>
+      </svg>
+    </a>
+  </li>
+  <li class="pagination__item pagination__to-end">
+    <a class="pagination__link" href="#"> В конец </a>
+  </li>
+</ul> */
