@@ -310,7 +310,10 @@ class searchCities {
   }
 
   clickOut(e) {
-    if (!e.target.closest("[data-citiestrigger]")) {
+    if (
+      !e.target.closest("[data-citiestrigger]") &&
+      !e.target.closest("[data-searchcities]")
+    ) {
       this.mainEl.classList.remove("active");
     }
   }
