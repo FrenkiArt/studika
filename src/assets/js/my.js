@@ -1,24 +1,41 @@
-// window.innerWidth > 768
+import navScrolls from "./navScrolls";
+import formSearch from "./formSearch";
+import navHelperFn from "./nav-helper";
+import searchCities from "./search-cities";
 
 window.addEventListener("resize", function (e) {
   console.log(window.innerWidth);
 });
 
-if (document.querySelector("#menu-trigger")) {
+if (document.querySelector("#nav-trigger")) {
   document
-    .querySelector("#menu-trigger")
+    .querySelector("#nav-trigger")
     .addEventListener("click", function (e) {
-      this.classList.toggle("active");
-
-      document.querySelector("#menu").classList.toggle("active");
+      document.querySelector("#nav").classList.toggle("active");
     });
 }
 
-if (document.querySelector("#menu")) {
-  document.querySelector("#menu").addEventListener("click", function (e) {
-    if (window.innerWidth < 800) {
-      document.querySelector("#menu-trigger").classList.toggle("active");
-      document.querySelector("#menu").classList.toggle("active");
-    }
+const navEl = document.querySelector("[data-nav]");
+
+if (navEl) {
+  window.myNav = new navScrolls(navEl);
+  window.myNav.start();
+}
+
+const formSearchEls = document.querySelectorAll("[data-formsearch]");
+
+if (formSearchEls) {
+  formSearchEls.forEach((el) => {
+    new formSearch(el).start();
+  });
+}
+
+navHelperFn();
+
+const searchCityEls = document.querySelectorAll("[data-searchcities]");
+
+if (searchCityEls) {
+  searchCityEls.forEach((el) => {
+    new searchCities(el).start();
   });
 }

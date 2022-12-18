@@ -3,42 +3,251 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="assets/svg/vite.svg" />
-    <link rel="stylesheet" href="assets/fonts/lato/stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Studika</title>
   </head>
   <body>
     <div id="app" class="page">
       <header id="header" class="header">
-        <div class="container">header</div>
+        <div class="container header__container">
+          <button
+            id="nav-trigger"
+            type="button"
+            class="nav-trigger header__nav-trigger"
+            title="Вызвать меню"
+          >
+            <svg width="32" height="32" class="">
+              <use xlink:href="assets/svg/svg_sprite.svg#burger"></use>
+            </svg>
+          </button>
+
+          <a href="#" class="logo header__logo" title="СТУДИКА">
+            <svg width="88" height="32" class="">
+              <use xlink:href="assets/svg/svg_sprite.svg#logo"></use>
+            </svg>
+          </a>
+
+          <div class="header__wrap-cities-trigger">
+            <button
+              type="button"
+              class="cities-trigger"
+              data-citiestrigger
+              title="Любой регион"
+            >
+              <svg width="32" height="32" class="cities-trigger__icon">
+                <use xlink:href="assets/svg/svg_sprite.svg#city-geo"></use>
+              </svg>
+              <span class="cities-trigger__value">Любой регион</span>
+            </button>
+          </div>
+
+          <form
+            action="#"
+            class="form-search header__form-search"
+            data-formsearch
+            autocomplete="off"
+          >
+            <label class="form-search__wrap-input">
+              <input
+                class="form-search__input"
+                type="search"
+                placeholder="Учебное заведение, специальность или профессия"
+                data-inputsearch
+              />
+              <svg width="32" height="32" class="form-search__icon">
+                <use xlink:href="assets/svg/svg_sprite.svg#search"></use>
+              </svg>
+            </label>
+            <button class="form-search__reset" type="reset" title="Очистить">
+              <svg width="32" height="32" class="">
+                <use xlink:href="assets/svg/svg_sprite.svg#reset"></use>
+              </svg>
+            </button>
+          </form>
+
+          <a
+            href="#"
+            title="Избранное"
+            class="btn-favorite header__btn-favorite"
+          >
+            <svg width="32" height="32" class="btn-favorite__icon">
+              <use xlink:href="assets/svg/svg_sprite.svg#heart"></use>
+            </svg>
+
+            <span class="btn-favorite__count">1</span>
+          </a>
+
+          <div class="header__wrap-ava">
+            <div class="ava">
+              <div class="ava__name">Екатерина</div>
+              <div class="ava__wrap-img">
+                <img
+                  src="assets/img/avatar.jpg"
+                  loading="lazy"
+                  alt="Екатерина"
+                  title="Екатерина"
+                  class="ava__img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <nav id="nav" class="nav" data-nav>
+            <button
+              type="button"
+              title="Влево"
+              class="nav__btn nav__before hiden"
+              data-navleft
+            >
+              <svg width="32" height="32" class="">
+                <use xlink:href="assets/svg/svg_sprite.svg#arrow-left"></use>
+              </svg>
+            </button>
+            <ul class="nav__list" data-navlist id="nav-list">
+              <li class="nav__list-item">
+                <a href="#" class="nav__link active">Вузы</a>
+              </li>
+              <li class="nav__list-item">
+                <a href="#" class="nav__link">Колледжи</a>
+              </li>
+              <li class="nav__list-item">
+                <a href="#" class="nav__link">Техникумы</a>
+              </li>
+              <li class="nav__list-item">
+                <a href="#" class="nav__link">Училища</a>
+              </li>
+              <li class="nav__list-item" data-navparent>
+                <a href="#" class="nav__link">Специальности</a>
+                <ul>
+                  <li>
+                    <a href="#" class="nav__inner-link">Высшее</a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav__inner-link">Среднее</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav__list-item">
+                <a href="#" class="nav__link">Профессии</a>
+              </li>
+              <li class="nav__list-item parent" data-navparent>
+                <a href="#" class="nav__link">Дистанционное обучение</a>
+                <ul>
+                  <li>
+                    <a href="#" class="nav__inner-link">
+                      Дистанционные колледжи
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav__inner-link">Дистанционные вузы</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav__list-item">
+                <a href="#" class="nav__link">Отзывы</a>
+              </li>
+              <li class="nav__list-item">
+                <a href="#" class="nav__link">Учебным заведениям</a>
+              </li>
+              <li class="nav__list-item">
+                <a href="#" class="nav__link">Тест на профориентацию</a>
+              </li>
+            </ul>
+            <button
+              type="button"
+              title="Вправо"
+              class="nav__btn nav__after hiden"
+              data-navright
+            >
+              <svg width="32" height="32" class="">
+                <use xlink:href="assets/svg/svg_sprite.svg#arrow-right"></use>
+              </svg>
+            </button>
+
+            <div class="float-nav-helper" data-navhelper></div>
+          </nav>
+        </div>
       </header>
+
+      <div class="float-cities" data-searchcities>
+        <div class="float-cities__wrap-search">
+          <form
+            action="#"
+            class="form-search"
+            data-formsearch
+            autocomplete="off"
+          >
+            <label class="form-search__wrap-input">
+              <input
+                class="form-search__input"
+                type="search"
+                placeholder="Регион, город, населенный пункт"
+                data-inputsearch
+              />
+              <svg width="32" height="32" class="form-search__icon">
+                <use xlink:href="assets/svg/svg_sprite.svg#search"></use>
+              </svg>
+            </label>
+            <button class="form-search__reset" type="reset" title="Очистить">
+              <svg width="32" height="32" class="">
+                <use xlink:href="assets/svg/svg_sprite.svg#reset"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div class="float-cities__wrap-tags" data-tags></div>
+        <div class="float-cities__hl"></div>
+        <ul class="float-cities__list" data-results>
+          <!-- <li class="float-cities__list-item">
+            <div class="card-float-city">
+              <div class="card-float-city__name">
+                <span class="match">Ни</span>жний Новгород
+              </div>
+              <div class="card-float-city__area">Нижегородская область</div>
+            </div>
+          </li>
+           -->
+        </ul>
+        <button type="button" class="float-cities__btn-save" data-savecities>
+          Cохранить
+        </button>
+      </div>
 
       <section id="first" class="first">
         <div class="container">
-          <div class="row">
-            <div class="col-6">
-              11111111 111111 11111 11111111 11111 1 1111111 111111 11111
-              11111111 11111 1 1 1 1 1 1 1 1
-            </div>
-            <div class="col-3">
-              11111111 111111 11111 11111111 11111 1 1111111 111111 11111
-              11111111 11111 1 1 1 1 1 1 1 1
-            </div>
-            <div class="col-3">
-              11111111 111111 11111 11111111 11111 1 1111111 111111 11111
-              11111111 11111 1 1 1 1 1 1 1 1
-            </div>
-          </div>
+          <!-- <ul class="float-cities__list" data-results>
+            <li class="float-cities__list-item">
+              <div class="card-float-city">
+                <div class="card-float-city__name">
+                  <span class="match">Ни</span>жний Новгород
+                </div>
+                <div class="card-float-city__area">Нижегородская область</div>
+              </div>
+            </li>
+          </ul> -->
+
+          <!-- Пример .tag -->
+          <!-- <div class="tag">
+                <div class="tag__text">Имя города</div>
+                <button type="button" class="tag__remove" title="Удалить">
+                  <svg width="32" height="32" class="">
+                    <use xlink:href="assets/svg/svg_sprite.svg#reset"></use>
+                  </svg>
+                </button>
+              </div> -->
         </div>
       </section>
 
       <footer id="footer" class="footer">
         <div class="container">footer</div>
       </footer>
-
-      <svg width="8" height="13" class="">
-        <use xlink:href="assets/svg/svg_sprite.svg#geo"></use>
-      </svg>
     </div>
 
     <script defer type="module" src="/src/main.js"></script>
